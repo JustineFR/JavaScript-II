@@ -31,26 +31,45 @@ function getLength(arr, cb) {
 }
 
 function last(arr, cb) {
+  return cb(arr.length-1)
   // last passes the last item of the array into the callback.
 }
 
 function sumNums(x, y, cb) {
+  return cb(x + y)
   // sumNums adds two numbers (x, y) and passes the result to the callback.
 }
 
 function multiplyNums(x, y, cb) {
+  return cb(x * y)
   // multiplyNums multiplies two numbers and passes the result to the callback.
-}
 
-function contains(item, list, cb) {
-  // contains checks if an item is present inside of the given array/list.
+function contains(item, list, cb) { 
+ if (list.indexOf(item) > 0) {
+   return cb(true)
+ } else {
+   return cb(false)
+ }
+  // check if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
 }
+// console.log(contains("seth", r2, uppercase);
 
-/* STRETCH PROBLEM */
-
+/* STRETCH PROBLEM - someone was trying to explain it to me*/
+// const numm = [1,2,1,3,1,2]
 function removeDuplicates(array, cb) {
+//   const myArr = array;
+//   const secondArr = [];
+//   // console.log(secondArr);
+//   for (let i = 0; i < myArr.length; i++) {
+//     console.log(`index:${i} - myArr number :${myArr[i]}`);
+//     console.log(`secondArr content: ${secondArr}`);
+//     if (secondArr.indexOf(myArr[i]) === -1)
+//     secondArr.push(myArr[i]) 
+//   }
+//   return secondArr;
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
 }
+console.log(removeDuplicates(numm));
